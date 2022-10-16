@@ -1,7 +1,7 @@
 package com.demowebshop.tests;
 
 import org.junit.jupiter.api.DisplayName;
-import pages.RegisterPage;
+import com.demowebshop.pages.RegisterPage;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selenide.*;

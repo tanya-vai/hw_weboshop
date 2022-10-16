@@ -1,4 +1,4 @@
-package pages;
+package com.demowebshop.pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
