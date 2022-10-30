@@ -1,7 +1,9 @@
 package com.demowebshop.tests;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import com.demowebshop.attach.Attach;
+import com.demowebshop.config.Browser;
 import com.demowebshop.config.ConfigReader;
 import com.demowebshop.config.ProjectConfiguration;
 import com.demowebshop.config.WebConfig;
@@ -12,12 +14,12 @@ import org.junit.jupiter.api.BeforeAll;
 
 public class TestBase {
     private static final WebConfig webConfig = ConfigReader.Instance.read();
+    private static ProjectConfiguration projectConfiguration = new ProjectConfiguration(webConfig);
 
 
     @BeforeAll
     static void config() {
         SelenideLogger.addListener("allure", new AllureSelenide());
-        ProjectConfiguration projectConfiguration = new ProjectConfiguration(webConfig);
         projectConfiguration.webConfig();
         projectConfiguration.apiConfig();
     }
@@ -25,9 +27,11 @@ public class TestBase {
     void addAttachments() {
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
-        Attach.browserConsoleLogs();
-        if (System.getProperty("remote_url") != null) {
-            Attach.addVideo();
+        if (Configuration.browser.equals(Browser.CHROME.name())) {
+            Attach.browserConsoleLogs();
+        }
+        if (projectConfiguration.isRemote()) {
+            Attach.addVideo(projectConfiguration.getVideoStorageUrl());
         }
     }
 }

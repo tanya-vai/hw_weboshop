@@ -17,7 +17,7 @@ public interface WebConfig extends Config {
     Browser browser();
 
     @Key("browserVersion")
-    @DefaultValue("106.0")
+    @DefaultValue("100.0")
     String browserVersion();
 
     @Key("browserSize")
@@ -35,5 +35,8 @@ public interface WebConfig extends Config {
     @Key("remoteUrl")
     @DefaultValue("http://localhost:4444")
     String remoteUrl();
+
+     @Key("videoStorage")
+     String videoStorage();
 
 }

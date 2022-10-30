@@ -31,4 +31,12 @@ public class ProjectConfiguration {
         }
     }
 
+    public String getVideoStorageUrl() {
+        return webConfig.videoStorage();
+    }
+
+    public Boolean isRemote() {
+        return webConfig.isRemote();
+    }
+
 }
