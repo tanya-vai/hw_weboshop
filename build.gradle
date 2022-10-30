@@ -10,11 +10,6 @@ repositories {
     mavenCentral()
 }
 
-java{
-    toolchain{
-        languageVersion = JavaLanguageVersion.of(11)
-    }
-}
 
 def allureVersion = "2.19.0",
     slf4jVersion = "1.7.32"
@@ -59,3 +54,9 @@ tasks.withType(Test) {
 }
 
 test {}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
