@@ -9,6 +9,7 @@ import org.aeonbits.owner.Config;
         "file:~/${env}.properties",
         "file:./${env}.properties"
 })
+
 public interface WebConfig extends Config {
     @Key("browser")
     @DefaultValue("CHROME")
@@ -23,7 +24,7 @@ public interface WebConfig extends Config {
     String browserSize();
 
     @Key("baseUrl")
-    @DefaultValue("https://demowebshop.tricentis.com/")
+    @DefaultValue("https://demowebshop.tricentis.com/register")
     String baseUrl();
 
     @Key("isRemote")
@@ -31,7 +32,7 @@ public interface WebConfig extends Config {
     boolean isRemote();
 
     @Key("remoteUrl")
-    @DefaultValue("http://localhost:4444")
+    @DefaultValue("https://user1:1234@selenoid.autotests.cloud/wd/hub")
     String remoteUrl();
 
     @Key("videoStorage")
