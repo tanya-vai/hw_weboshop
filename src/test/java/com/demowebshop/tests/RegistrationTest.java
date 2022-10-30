@@ -53,9 +53,9 @@ public class RegistrationTest extends TestBase {
 
     @DisplayName("Creating new user(API) and updating his name(UI) ")
     @Test
-    public void userRegistrationAndUpdateApiTest(){
+    public void userRegistrationAndUpdateApiTest() {
         step("Create new user with API", () -> {
-        registrationApiTest();
+            registrationApiTest();
         });
         step("Update name of user", () -> {
             registerPage.openProfilePage()

@@ -16,7 +16,7 @@ public class RegisterPage {
             confirmPasswordInput = $("#ConfirmPassword"),
             registerButton = $("#register-button"),
             profileButton = $(".account"),
-    saveButton = $("[value=\"Save\"]");
+            saveButton = $("[value=\"Save\"]");
 
     public RegisterPage openRegisterPage() {
         open("register/");
