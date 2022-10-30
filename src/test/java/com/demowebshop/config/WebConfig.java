@@ -2,16 +2,14 @@ package com.demowebshop.config;
 
 import org.aeonbits.owner.Config;
 
- @Config.LoadPolicy(Config.LoadType.MERGE)
- @Config.Sources({
-         "system:properties",
-         "classpath:config/${env}.properties",
-         "file:~/${env}.properties",
-         "file:./${env}.properties"
- })
-
+@Config.LoadPolicy(Config.LoadType.MERGE)
+@Config.Sources({
+        "system:properties",
+        "classpath:config/${env}.properties",
+        "file:~/${env}.properties",
+        "file:./${env}.properties"
+})
 public interface WebConfig extends Config {
-
     @Key("browser")
     @DefaultValue("CHROME")
     Browser browser();
@@ -36,7 +34,6 @@ public interface WebConfig extends Config {
     @DefaultValue("http://localhost:4444")
     String remoteUrl();
 
-     @Key("videoStorage")
-     String videoStorage();
-
+    @Key("videoStorage")
+    String videoStorage();
 }
