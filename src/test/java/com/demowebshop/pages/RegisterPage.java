@@ -19,7 +19,7 @@ public class RegisterPage {
     saveButton = $("[value=\"Save\"]");
 
     public RegisterPage openRegisterPage() {
-        open();
+        open("register/");
         return this;
     }
 

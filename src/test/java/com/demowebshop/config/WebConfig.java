@@ -24,7 +24,7 @@ public interface WebConfig extends Config {
     String browserSize();
 
     @Key("baseUrl")
-    @DefaultValue("https://demowebshop.tricentis.com/register")
+    @DefaultValue("https://demowebshop.tricentis.com/")
     String baseUrl();
 
     @Key("isRemote")
