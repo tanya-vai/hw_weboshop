@@ -17,7 +17,7 @@ public interface WebConfig extends Config {
     Browser browser();
 
     @Key("browserVersion")
-    @DefaultValue("107.0")
+    @DefaultValue("106.0")
     String browserVersion();
 
     @Key("browserSize")
